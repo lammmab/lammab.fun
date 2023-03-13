@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Problem With ARC / blog</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/x-icon" href="https://lammab.fun/favicon/favicon_dark.png">
+    <meta content="lammab.fun" property="og:title" />
+    <meta content="The Problem With ARC / blog" property="og:description" />
+    <meta content="https://lammab.fun" property="og:url" />
+    <meta content="https://lammab.fun/favicon/favicon_dark.png" property="og:image" />
+    <meta content="#43B581" data-react-helmet="true" name="theme-color" />
+    <style>
+      body {
+        overflow: visible;
+      }
+    </style>
+</head>
+<body>
+    <div style="position: fixed;">
+      <a href="main.html" id="back" ><== back to main blog page</a>
+    </div>
+    <div style="height: 100%;" id="main_content">
+        <h1 style="white-space: pre-wrap;">The Problem With ARC</h1>
+        <p>If you've ever used fakemurk, you've probably realized that the play store has no available apps. This is because of how ARC works, (kind of strange). From what I've noticed, the play store does not use policy.json for enabling whether or not a whitelist or blacklist is used. If you null out ArcPolicy, you will lose access to all apps. If you get rid of some pieces which specify that ARC uses a blacklist, nothing happens.</p>
+        <p>This is a problem because there seems to be no way to get access to the entirety of the playstore, without using an alternate APK loader (which is possible because of devmode, but not practical because it's not as supported). But, from what I've noticed, it IS possible to get access to specific apps, which can be useful for officially installing apps that your school doesn't want you to while avoiding using gross alternate APK managers. This prevents many of the problems I've noticed using APKs, and allows for easily installing and deleting apps.</p>
+        <h1>The solution to our problem</h1>
+        <p>This method of getting access to these apps is annoying, and includes finding the app's ID, messing with the awfully formatted JSON file, and then pasting it into Pollen. At first I thought there may be a way to unblock the entire manager, which is why I didn't think too much of it. But, as I checked, it seemed there may be no way. So, instead, what I opted into doing, was making an easy to use ARC app generator so that you can easily and quickly generate apps with a list. This is a very simple tool using JS, which splits each app ID by a comma and throws it into an array. Then, it adds the proper formatting around the ID using the built in .replace() operator, and adds it into a new array. From here, everything then gets placed back together seperated by commas and the rest of the formatting is added, making it quick and easy to paste into Pollen.</p>
+        <p>If you would like to find my ARC generator, navigate to <a style="color: blue;" href="https://lammab.fun/projects/arc/generate">here.</a></p>
+        <h1>In conclusion,</h1>
+        <p>ARC is stupid and annoying. If you believe ARC is genuinely good, you are simply wrong. There is no documentation about it anywhere besides a few Google articles and is not easily modified from policy. An overhaul of this system would be useful for sysadmins, and us (lol). </p>
+    </div>
+</body>
+</html>
