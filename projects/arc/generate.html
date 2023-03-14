@@ -2,6 +2,7 @@
     <head>
         <link rel="shortcut icon" href="../../favicon/favicon_light.ico">
         <title>ARC App Generator</title>
+        <link rel="stylesheet" href="../../style.css">
         <script src="arc.js"></script>
         <style>
             #press {
@@ -15,19 +16,29 @@
               overflow-x: scroll;
               word-wrap: break-word;
               }
-            </style>
+            label {
+              color: white;
+              font-family: "Nunito_L";
+            }
+        </style>
+
     </head>
 
     <body>
+      <center>
         <p>To use this, you must have fakemurk/pollen.</p>
         <br>
         <p>Enter a list of Playstore app IDs seperated by commas [e.g.] com.google.android.youtube,com.spotify.music</p>
         <input id="apps" placeholder="com.google.android.youtube">
         <button id="press">Generate</button><br>
-        <input id="includeDefaultApps" type="checkbox">Include default apps
+        <label>
+        <input id="includeDefaultApps" type="checkbox">
+        Include default apps
+        </label>
         <br><p>This is RECOMMENDED. I have compiled a list you can use for your apps, but at the cost of it being harder to sort through.</p>
         <div id="yeah">
             <a id="output">"ArcPolicy": "{\"applications\":[{\"packageName\":\"com.google.android.youtube\",\"installType\":\"AVAILABLE\"},{\"packageName\":\"com.spotify.music\",\"installType\":\"AVAILABLE\"}],\"availableAppSetPolicy\":\"BLACKLIST\",\"apkCacheEnabled\":true,\"apkCacheForWhitelistedAppsEnabled\":true,\"playDeviceLocalPolicyEnabled\":true,\"playLocalPolicyEnabled\":true,\"playDirectInstallDisabled\":true,\"playDeviceLocalPolicyDisabled\":true,\"playStoreMode\":\"WHITELIST_NOT_ENFORCED\"}"</a>
         </div>
+      </center>
     </body>
 </html>
