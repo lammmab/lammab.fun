@@ -44,9 +44,9 @@ h1 {
     font-size: 17px;
 }
 
-#card {`
+#card {
   width: 60vw;
-  height: 75px;
+  height: 8vh;
   border-width: 3px;
   border-radius: 30px;
   border-style: solid;

@@ -16,6 +16,14 @@
       body {
         overflow: visible;
       }
+      #main_content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      h2 {
+        margin-top: 5px;
+      }
     </style>
 </head>
 <body>
@@ -24,6 +32,7 @@
     </div>
     <div style="height: 100%;" id="main_content">
         <h1 style="white-space: pre-wrap;">The Problem With ARC</h1>
+        <h2>03/13/23</h2>
         <p>If you've ever used fakemurk, you've probably realized that the play store has no available apps. This is because of how ARC works, (kind of strange). From what I've noticed, the play store does not use policy.json for enabling whether or not a whitelist or blacklist is used. If you null out ArcPolicy, you will lose access to all apps. If you get rid of some pieces which specify that ARC uses a blacklist, nothing happens.</p>
         <p>This is a problem because there seems to be no way to get access to the entirety of the playstore, without using an alternate APK loader (which is possible because of devmode, but not practical because it's not as supported). But, from what I've noticed, it IS possible to get access to specific apps, which can be useful for officially installing apps that your school doesn't want you to while avoiding using gross alternate APK managers. This prevents many of the problems I've noticed using APKs, and allows for easily installing and deleting apps.</p>
         <h1>The solution to our problem</h1>
